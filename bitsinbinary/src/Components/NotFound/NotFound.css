@@ -11,8 +11,9 @@ body {
   letter-spacing: -7px;
 }
 
-div {
+.not-found {
   animation: glitch 1s linear infinite;
+  position: relative; /* Added to ensure pseudo-elements are positioned correctly */
 }
 
 @keyframes glitch {
@@ -29,14 +30,14 @@ div {
   }
 }
 
-div:before,
-div:after {
+.not-found::before,
+.not-found::after {
   content: attr(title);
   position: absolute;
   left: 0;
 }
 
-div:before {
+.not-found::before {
   animation: glitchTop 1s linear infinite;
   clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
@@ -56,13 +57,13 @@ div:before {
   }
 }
 
-div:after {
-  animation: glitchBotom 1.5s linear infinite;
+.not-found::after {
+  animation: glitchBottom 1.5s linear infinite;
   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 }
 
-@keyframes glitchBotom {
+@keyframes glitchBottom {
   2%,
   64% {
     transform: translate(-2px, 0);
