@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import "./Home.css";
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <>
+      <div className="title">
+        <h1>Bits In Binary</h1>
+      </div>
+    </>
+  );
 }
 
-export default Home
+export default Home;
